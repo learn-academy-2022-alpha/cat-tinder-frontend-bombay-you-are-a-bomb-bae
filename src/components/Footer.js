@@ -6,7 +6,7 @@ class Footer extends Component{
       <>
         <footer>
           <div class="footer-content">
-          <h3>Foolish Developer</h3>
+            <h3>Bom-BAE Developer</h3>
             <p> lorem ipsum sdka ashdasudb kasfbasbd asdbajdbasjdas sadasdb asdhjasd </p>
 
             <ul class="socials">
@@ -19,7 +19,7 @@ class Footer extends Component{
           </div>
 
           <div class="footer-bottom">
-            <p>copyright &copy;2021 <a href="#">foolishdeveloper</a>  </p>
+            <p>copyright &copy;2022 <a href="#">Paula & Jennice</a>  </p>
           </div>
         </footer>
       </>
