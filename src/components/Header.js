@@ -31,7 +31,7 @@ class Header extends Component{
             </ul>
           </div>
         </nav>
-        <h1>Hello this is the header!</h1>
+        <h3>Hello this is the header!</h3>
       </>
     )
   }
