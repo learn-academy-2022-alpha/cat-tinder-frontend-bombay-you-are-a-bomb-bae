@@ -4,7 +4,11 @@ class CatShow extends Component{
   render(){
     return(
       <>
-        <h1>Hi this is the CatShow!</h1>
+        <h3>Cat</h3>
+          <img src={this.props.cat && this.props.cat.image} />
+          <h1>{this.props.cat && this.props.cat.name}</h1>
+          <p>Age: {this.props.cat && this.props.cat.age}</p>
+          <p>Enjoys: {this.props.cat && this.props.cat.enjoys}</p>
       </>
     )
   }
