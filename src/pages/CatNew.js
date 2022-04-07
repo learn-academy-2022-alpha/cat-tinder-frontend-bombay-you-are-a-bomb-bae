@@ -1,10 +1,99 @@
 import React, { Component } from 'react'
+import {
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Button
+} from 'reactstrap'
+// react-router import
+import { Redirect } from 'react-router-dom'
+
+// JavaScript code at the bottom of the JSX that will redirect when success is true
+
 
 class CatNew extends Component{
+  constructor(props){
+  super(props)
+  this.state = {
+    newCat: {
+      name: "",
+      age: "",
+      enjoys: "",
+      image: "",
+    },
+    submitted: false
+  }
+}
+
+handleChange = (e) => {
+  // destructuring form out of state
+  let { newCat } = this.state
+  newCat[e.target.name] = e.target.value
+  newCat[e.target.age] = e.target.value
+  newCat[e.target.enjoys] = e.target.value
+  newCat[e.target.image] = e.target.value
+  // setting state to the updated form content
+  this.setState({newCat: newCat})
+}
+
+handleSubmit = () => {
+  this.props.createCat(this.state.newCat)
+  this.setState({submitted: true})
+}
+
   render(){
     return(
       <>
-        <h1>Hi this is the CatNew!</h1>
+        <Form>
+          <h1>Please Add Your Cat</h1>
+          <FormGroup>
+            <Label for="name">Name</Label>
+              <Input
+                type="text"
+                name="name"
+                placeholder= "What's your buddies name?"
+                onChange={this.handleChange}
+                value={this.state.newCat.name}
+              />
+          </FormGroup>
+          <FormGroup>
+            <Label for="age">Age</Label>
+              <Input
+                type="text"
+                name="age"
+                placeholder= "How old is your friend?"
+                onChange={this.handleChange}
+                value={this.state.newCat.age}
+              />
+          </FormGroup>
+          <FormGroup>
+            <Label for="enjoys">Enjoys</Label>
+              <Input
+                type="text"
+                name="enjoys"
+                placeholder= "What do they like to do?"
+                onChange={this.handleChange}
+                value={this.state.newCat.enjoys}
+              />
+          </FormGroup>
+          <FormGroup>
+            <Label for="image">Image URL</Label>
+              <Input
+                type= "URL"
+                name="image"
+                placeholder= "Share a photo of your friend."
+                onChange={this.handleChange}
+                value={this.state.newCat.image}
+              />
+          </FormGroup>
+          <Button
+            name="submit"
+            onClick={this.handleSubmit}>
+              Create a New Profile
+          </Button>
+          {this.state.submitted && <Redirect to="/catindex" />}
+        </Form>
       </>
     )
   }
