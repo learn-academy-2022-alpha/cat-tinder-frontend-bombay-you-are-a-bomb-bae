@@ -28,10 +28,6 @@ class App extends Component{
     this.readCat()
   }
 
-  createCat = (cat) => {
-    console.log(cat)
-  }
-
   readCat = () => {
     fetch("http://localhost:3000/cats")
     .then(response =>response.json())
