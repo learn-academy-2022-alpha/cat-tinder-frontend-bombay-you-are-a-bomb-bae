@@ -30,9 +30,6 @@ handleChange = (e) => {
   // destructuring form out of state
   let { newCat } = this.state
   newCat[e.target.name] = e.target.value
-  newCat[e.target.age] = e.target.value
-  newCat[e.target.enjoys] = e.target.value
-  newCat[e.target.image] = e.target.value
   // setting state to the updated form content
   this.setState({newCat: newCat})
 }
