@@ -8,7 +8,7 @@ import CatNew from './pages/CatNew'
 import CatEdit from './pages/CatEdit'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
-import mockCats from './mockCats.js'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -20,13 +20,46 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      cats: mockCats
+      cats: []
     }
   }
 
-  createCat = (cat) => {
-    console.log(cat)
+  componentDidMount(){
+    this.readCat()
   }
+
+  readCat = () => {
+    fetch("http://localhost:3000/cats")
+    .then(response =>response.json())
+    .then(payload => this.setState({cats: payload}))
+    .catch(errors => console.log("Cat read errors:", errors))
+  }
+
+  createCat = (newCat) => {
+    fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(newCat),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => this.readCat())
+    .catch(errors => console.log("Cat create errors:", errors))
+  }
+
+  updateCat = (cat, id) => {
+  fetch(`http://localhost:3000/cats/${id}`, {
+    body: JSON.stringify(cat),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    method: "PATCH"
+  })
+  .then(response => response.json())
+  .then(payload => this.readCat())
+  .catch(errors => console.log("Cat update errors:", errors))
+}
 
   render(){
     return(
