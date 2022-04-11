@@ -43,11 +43,12 @@ footer{
     bottom: 0;
     left: 0;
     right: 0;
-    background: #111;
+    background: #1d8857;
     height: auto;
     width: 100vw;
     padding-top: 40px;
-    color: #FFA07A;
+    color: white;
+    margin-top: 40px;
 }
 
 .footer-content{
@@ -104,7 +105,7 @@ footer{
 }
 
 .footer-bottom{
-    background: #000;
+    background: #005826;
     width: 100vw;
     padding: 20px;
     padding-bottom: 40px;
@@ -112,7 +113,7 @@ footer{
 }
 
 .footer-bottom p{
-   float: left;
+   float: center;
    font-size: 14px;
    word-spacing: 2px;
    text-transform: capitalize;
@@ -134,4 +135,47 @@ footer{
   margin-top: 10px;
   margin-bottom: 20px;
 }
+}
+
+#indexcard {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#full-page {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+
+}
+
+#index-image {
+  height: 400px;
+  object-fit: cover;
+  object-position: 90% 0;
+}
+
+#form-new {
+  width: 700px;
+}
+
+#form-edit {
+  width: 700px;
+}
+
+h1 {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+h3 {
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#showpicture {
+  display: flex;
+  height: 800px;
+  object-fit: fill;
+
 }

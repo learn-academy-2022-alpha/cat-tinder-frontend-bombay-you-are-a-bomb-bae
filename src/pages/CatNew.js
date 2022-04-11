@@ -42,8 +42,10 @@ handleSubmit = () => {
   render(){
     return(
       <>
+      <div id = 'full-page'>
         <Form>
           <h1>Please Add Your Cat</h1>
+          <div id = 'form-new'>
           <FormGroup>
             <Label for="name">Name</Label>
               <Input
@@ -84,6 +86,7 @@ handleSubmit = () => {
                 value={this.state.newCat.image}
               />
           </FormGroup>
+            </div>
           <Button
             name="submit"
             onClick={this.handleSubmit}>
@@ -91,6 +94,7 @@ handleSubmit = () => {
           </Button>
           {this.state.submitted && <Redirect to="/catindex" />}
         </Form>
+        </div>
       </>
     )
   }

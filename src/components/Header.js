@@ -1,40 +1,44 @@
 import React, { Component } from 'react';
-import {Nav, NavItem, NavLink} from 'reactstrap';
-
+import {Navbar, NavItem, NavLink, NavbarToggler, NavbarBrand, Collapse, Nav, NavbarText} from 'reactstrap';
+import banner from '../assets/Canva-Banner.png' // with import
 class Header extends Component{
   render(){
     return(
       <>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Recommended <span class="sr-only"></span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <h3>Hello this is the header!</h3>
-      </>
-    )
-  }
-}
+      <img src = {banner}/>
+      <div>
+    <Navbar
+      color="success"
+     dark
+     expand="md"
+     light
+    >
+      <NavbarBrand href="http://localhost:3001">
+        Home
+      </NavbarBrand>
+      <NavbarToggler onClick={function noRefCheck(){}} />
+      <Collapse navbar>
+        <Nav
+          className="me-auto"
+          navbar
+        >
+          <NavItem>
+            <NavLink href="http://localhost:3001/catindex">
+              Find A Match
+            </NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="http://localhost:3001/catnew">
+              Add A Cat
+            </NavLink>
+          </NavItem>
 
+        </Nav>
+      </Collapse>
+    </Navbar>
+  </div>
+  </>
+ )
+}
+}
 export default Header
