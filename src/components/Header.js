@@ -34,9 +34,6 @@ class Header extends Component{
           </NavItem>
 
         </Nav>
-        <NavbarText>
-          Simple Text
-        </NavbarText>
       </Collapse>
     </Navbar>
   </div>
