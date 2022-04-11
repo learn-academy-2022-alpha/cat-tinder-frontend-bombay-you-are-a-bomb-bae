@@ -16,7 +16,7 @@ Enzyme.configure({adapter: new Adapter()})
 describe("When Header renders", () => {
     it("displays a heading", () => {
       const header = shallow(<Header />)
-      const headerHeading = header.find("h3").text()
-      expect(headerHeading).toEqual("Hello this is the header!")
+      const headerHeading = header.find("div").text()
+      expect(headerHeading).toEqual("Find Your MatchAdd A CatAbout Us (Work in progress)")
     })
   })

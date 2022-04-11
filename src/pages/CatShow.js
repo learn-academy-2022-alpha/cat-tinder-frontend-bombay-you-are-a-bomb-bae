@@ -27,8 +27,12 @@ handleDelete = () => {
   render(){
     return(
       <>
+      <div id = 'full-page'>
         <h3>Cat</h3>
+        <div id = 'showpicture'>
           <img src={this.props.cat && this.props.cat.image} />
+        </div>
+        <div id = 'textbox'>
           <h1>{this.props.cat && this.props.cat.name}</h1>
           <p>Age: {this.props.cat && this.props.cat.age}</p>
           <p>Enjoys: {this.props.cat && this.props.cat.enjoys}</p>
@@ -40,6 +44,8 @@ handleDelete = () => {
               Delete Cat Profile
             </Button>
           </NavLink>
+          </div>
+          </div>
       </>
     )
   }
